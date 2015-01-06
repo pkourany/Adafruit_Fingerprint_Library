@@ -1,7 +1,7 @@
 {
 	"name": "Adafruit_Fingerprint",
 	"author": "Paul Kourany",
-	"version": "1.0",
+	"version": "1.0.0",
 	"license": "BSD License",
 	"description": "Adafruit Fingerprint Sensor library for Spark"
 }
