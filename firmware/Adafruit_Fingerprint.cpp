@@ -187,7 +187,7 @@ void Adafruit_Fingerprint::writePacket(uint32_t addr, uint8_t packettype,
   Serial.print((uint8_t)(len), HEX);
 #endif
 
-#if (ARDUINO >= 100) || defined (SPARK))
+#if ((ARDUINO >= 100) || defined (SPARK))
   mySerial->write((uint8_t)(FINGERPRINT_STARTCODE >> 8));
   mySerial->write((uint8_t)FINGERPRINT_STARTCODE);
   mySerial->write((uint8_t)(addr >> 24));
@@ -212,7 +212,7 @@ void Adafruit_Fingerprint::writePacket(uint32_t addr, uint8_t packettype,
   uint16_t sum = (len>>8) + (len&0xFF) + packettype;
   for (uint8_t i=0; i< len-2; i++) {
 
-#if (ARDUINO >= 100) || defined (SPARK))
+#if ((ARDUINO >= 100) || defined (SPARK))
     mySerial->write((uint8_t)(packet[i]));
 #else
     mySerial->print((uint8_t)(packet[i]), BYTE);
@@ -228,7 +228,7 @@ void Adafruit_Fingerprint::writePacket(uint32_t addr, uint8_t packettype,
   Serial.print(" 0x"); Serial.println((uint8_t)(sum), HEX);
 #endif
 
-#if (ARDUINO >= 100) || defined (SPARK))
+#if ((ARDUINO >= 100) || defined (SPARK))
   mySerial->write((uint8_t)(sum>>8));
   mySerial->write((uint8_t)sum);
 #else
