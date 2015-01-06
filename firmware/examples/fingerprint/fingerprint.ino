@@ -17,7 +17,7 @@
  ****************************************************/
 
 
-#include "Adafruit_Fingerprint.h"
+#include "Adafruit_Fingerprint/Adafruit_Fingerprint.h"
 
 #if defined (SPARK)
 //
