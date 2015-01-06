@@ -19,7 +19,7 @@
 
 #include "Adafruit_Fingerprint.h"
 
-#ifdef SPARK_CORE
+#if defined (SPARK)
 //
 #else
 #if ARDUINO >= 100
@@ -31,7 +31,7 @@
 
 int getFingerprintIDez();
 
-#ifdef SPARK_CORE
+#if defined (SPARK)
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
 #else
 // pin #2 is IN from sensor (GREEN wire)
