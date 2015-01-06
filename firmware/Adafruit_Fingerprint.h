@@ -17,7 +17,7 @@
  ****************************************************/
 #include "application.h"
 
-#ifdef SPARK_CORE
+#if defined (SPARK)
 //
 #else
 #if (ARDUINO >= 100)
@@ -79,8 +79,8 @@
 class Adafruit_Fingerprint {
  public:
  
-#ifdef SPARK_CORE
-	Adafruit_Fingerprint(USARTSerial *);
+#if defined (SPARK)
+  Adafruit_Fingerprint(USARTSerial *);
 #else
 #if ARDUINO >= 100
   Adafruit_Fingerprint(SoftwareSerial *);
@@ -108,7 +108,7 @@ class Adafruit_Fingerprint {
   uint32_t thePassword;
   uint32_t theAddress;
 
-#ifdef SPARK_CORE
+#if defined (SPARK)
   USARTSerial *mySerial;
 #else
 #if ARDUINO >= 100
