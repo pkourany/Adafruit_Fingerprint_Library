@@ -18,7 +18,7 @@
 
 #include "Adafruit_Fingerprint.h"
 
-#ifdef SPARK_CORE
+#if defined (SPARK)
 //
 #else
 #if ARDUINO >= 100
@@ -30,7 +30,7 @@
 
 uint8_t getFingerprintEnroll(uint8_t id);
 
-#ifdef SPARK_CORE
+#if defined (SPARK)
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
 #else
 // pin #2 is IN from sensor (GREEN wire)
@@ -48,7 +48,7 @@ void setup()
 {
   Serial.begin(9600);
   
-#ifdef SPARK_CORE
+#if defined (SPARK)
   while(!Serial.available()) SPARK_WLAN_Loop();
 #endif
  
@@ -71,7 +71,7 @@ void loop()                     // run over and over again
   uint8_t id = 0;
   while (true) {
     while (! Serial.available())
-#ifdef SPARK_CORE
+#if defined (SPARK)
 	SPARK_WLAN_Loop();
 #else
 	;
@@ -86,7 +86,7 @@ void loop()                     // run over and over again
   Serial.println(id);
   
   while (!getFingerprintEnroll(id) )
-#ifdef SPARK_CORE
+#if defined (SPARK)
 	SPARK_WLAN_Loop();
 #else
 	;
