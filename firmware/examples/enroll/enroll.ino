@@ -16,7 +16,7 @@
   !!! Adapted for Spark Core by Paul Kourany, May 2014 !!!
  ****************************************************/
 
-#include "Adafruit_Fingerprint.h"
+#include "Adafruit_Fingerprint/Adafruit_Fingerprint.h"
 
 #if defined (SPARK)
 //
