@@ -1,7 +1,7 @@
-// This program allows the Spark to act as a relay
+// This program allows the Particle device to act as a relay
 // between a terminal program on a PC and the
 // Fingerprint sensor connected to RX/TX (Serial1)
-// on the Spark
+// on the Particle
 
 void setup()  
 {

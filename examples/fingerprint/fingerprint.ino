@@ -13,13 +13,14 @@
   Written by Limor Fried/Ladyada for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
   
-  !!! Adapted for Spark Core by Paul Kourany, May 2014 !!!
+ !!! Update for Particle Libraries V2.0, Jan 2016 !!!
+ !!! Adapted for Spark Core by Paul Kourany, May 2014 !!!
  ****************************************************/
 
 
-#include "Adafruit_Fingerprint/Adafruit_Fingerprint.h"
+#include "Adafruit_Fingerprint.h"
 
-#if defined (SPARK)
+#if defined (PARTICLE)
 //
 #else
 #if ARDUINO >= 100
@@ -31,7 +32,7 @@
 
 int getFingerprintIDez();
 
-#if defined (SPARK)
+#if defined (PARTICLE)
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
 #else
 // pin #2 is IN from sensor (GREEN wire)

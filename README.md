@@ -14,4 +14,5 @@ Written by Limor Fried/Ladyada  for Adafruit Industries.
 BSD license, check license.txt for more information
 All text above must be included in any redistribution
 
+!!! Update for Particle Libraries V2.0, Jan 2016 !!!
 !!! Adapted for Spark Core by Paul Kourany, May 2014 !!!

@@ -13,12 +13,13 @@
   Written by Limor Fried/Ladyada for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
   
+  !!! Update for Particle Libraries V2.0, Jan 2016 !!!
   !!! Adapted for Spark Core by Paul Kourany, May 2014 !!!
  ****************************************************/
 
-#include "Adafruit_Fingerprint/Adafruit_Fingerprint.h"
+#include "Adafruit_Fingerprint.h"
 
-#if defined (SPARK)
+#if defined (PARTICLE)
 //
 #else
 #if ARDUINO >= 100
@@ -30,7 +31,7 @@
 
 uint8_t getFingerprintEnroll(uint8_t id);
 
-#if defined (SPARK)
+#if defined (PARTICLE)
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
 #else
 // pin #2 is IN from sensor (GREEN wire)
@@ -48,8 +49,8 @@ void setup()
 {
   Serial.begin(9600);
   
-#if defined (SPARK)
-  while(!Serial.available()) SPARK_WLAN_Loop();
+#if defined (PARTICLE)
+  while(!Serial.available()) Particle.process();
 #endif
  
   Serial.println("fingertest");
@@ -71,8 +72,8 @@ void loop()                     // run over and over again
   uint8_t id = 0;
   while (true) {
     while (! Serial.available())
-#if defined (SPARK)
-	SPARK_WLAN_Loop();
+#if defined (PARTICLE)
+	Particle.process();
 #else
 	;
 #endif	
@@ -87,7 +88,7 @@ void loop()                     // run over and over again
   
   while (!getFingerprintEnroll(id) )
 #if defined (SPARK)
-	SPARK_WLAN_Loop();
+	Particle.process();
 #else
 	;
 #endif

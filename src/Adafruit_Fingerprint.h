@@ -13,11 +13,12 @@
   Written by Limor Fried/Ladyada for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
   
+  !!! Update for Particle Libraries V2.0, Jan 2016 !!!
   !!! Adapted for Spark Core by Paul Kourany, May 2014 !!!
  ****************************************************/
-#include "application.h"
+#include "Particle.h"
 
-#if defined (SPARK)
+#if defined (PARTICLE)
 //
 #else
 #if (ARDUINO >= 100)
@@ -80,7 +81,7 @@
 class Adafruit_Fingerprint {
  public:
  
-#if defined (SPARK)
+#if defined (PARTICLE)
   Adafruit_Fingerprint(USARTSerial *);
 #else
 #if ARDUINO >= 100
@@ -110,7 +111,7 @@ class Adafruit_Fingerprint {
   uint32_t thePassword;
   uint32_t theAddress;
 
-#if defined (SPARK)
+#if defined (PARTICLE)
   USARTSerial *mySerial;
 #else
 #if ARDUINO >= 100

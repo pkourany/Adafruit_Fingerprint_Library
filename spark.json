@@ -1,7 +1,0 @@
-{
-	"name": "Adafruit_Fingerprint",
-	"author": "Paul Kourany",
-	"version": "1.0.2",
-	"license": "BSD License",
-	"description": "Adafruit Fingerprint Sensor library for Particle"
-}
